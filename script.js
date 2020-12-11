@@ -6,9 +6,13 @@ const d=document,
 d.addEventListener("click",e=>{
   if (e.target===$btn) {
     console.log("hi")
-    $hourContainer[0].children[0].textContent=hourSum($time.value,6);
-    $hourContainer[1].children[0].textContent=hourSum($time.value,7,30);
-    $hourContainer[2].children[0].textContent=hourSum($time.value,9);
+    if (!$time.value) console.log("no value entered");
+    else{
+      // $hourContainer[0].children[0].textContent=hourSum($time.value,6);
+      // $hourContainer[1].children[0].textContent=hourSum($time.value,7,30);
+      // $hourContainer[2].children[0].textContent=hourSum($time.value,9);
+      givingValues($hourContainer)
+    }
   }
 })
 // d.addEventListener("change",e=>{
@@ -30,4 +34,11 @@ function hourSum(time,hour,min=0){
   }
   
   return [h,":",m.padStart(2,"0")].join("");
+}
+
+function givingValues(container){
+  let preTimers=[{h:6},{h:7,m:30},{h:9}];
+  for (let i=0; i<container.length; i++){
+    container[i].children[0].textContent=hourSum($time.value,preTimers[i].h,preTimers[i].m)
+  }
 }
