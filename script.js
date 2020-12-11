@@ -21,12 +21,12 @@ d.addEventListener("click",e=>{
 function hourSum(time,hour,min=0){
   let [h,m]=time.split(":");
   
-  m=`${parseInt(m)+min}`;
-  if(parseInt(m)>=60) m=`${parseInt(m)-60}`;
+  m=`${parseInt(m)-min}`;
+  if(parseInt(m)<0) m=`${parseInt(m)+60}`;
   
   for (let i=0; i<hour;i++){
-    h=`${parseInt(h)+1}`;
-    if(h==24) h='0';
+    h=`${parseInt(h)-1}`;
+    if(h<0) h='23';
   }
   
   return [h,":",m.padStart(2,"0")].join("");
