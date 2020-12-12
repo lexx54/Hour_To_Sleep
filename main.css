@@ -11,9 +11,7 @@ body {
   font-family: "Oxygen", sans-serif;
   padding: 1.5em 2em;
 }
-/* section {
-  margin: 1em 0;
-} */
+
 .desc {
   /* padding: 1.5em 0 0; */
   display: flex;
@@ -70,4 +68,21 @@ body {
 }
 .hl {
   border-bottom: 1px solid var(--secondary-color);
+}
+.hl a {
+  text-decoration: none;
+  color: var(--principal-color);
+  font-weight: bold;
+}
+footer {
+  margin-top: 2em;
+}
+
+@media screen and (min-width: 720px) {
+  main {
+    display: flex;
+  }
+  main div {
+    flex: 1;
+  }
 }

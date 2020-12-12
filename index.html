@@ -13,49 +13,73 @@
     />
   </head>
   <body>
-    <section class="desc">
-      <p class="title">Hours to Sleep</p>
-      <p class="desc-content">
-        During an ideal night’s sleep, your body has enough time to go through
-        four to five 90-minute cycles that sample different phases of sleep as
-        the night progresses.
+    <main>
+      <div>
+        <section class="desc">
+          <p class="title">Hours to Sleep</p>
+          <p class="desc-content">
+            During an ideal night’s sleep, your body has enough time to go
+            through four to five 90-minute cycles that sample different phases
+            of sleep as the night progresses.
+          </p>
+          <p class="desc-content">
+            Are you wondering when do you have to sleep and when you'll wake up,
+            accomplishing the sleep cycles?
+          </p>
+          <p class="desc-content">Ask no more!</p>
+        </section>
+        <section class="conf">
+          <p>Choose the hour in wich you want to wake up</p>
+          <div class="inputs">
+            <input type="time" name="time" />
+            <input type="button" value="Press me" name="btn" />
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section class="show">
+          <div class="hour-container hour1">
+            <p></p>
+            <p>
+              If you go to sleep at this hour,<br />You'll
+              <span class="hl">6 hour</span>
+            </p>
+          </div>
+          <div class="hour-container hour2">
+            <p></p>
+            <p>
+              If you go to sleep at this hour,<br />You'll sleep
+              <span class="hl">7:30 hour</span>
+            </p>
+          </div>
+          <div class="hour-container hour3">
+            <p></p>
+            <p>
+              If you go to sleep at this hour,<br />You'll sleep
+              <span class="hl">9 hour</span>
+            </p>
+          </div>
+          <span
+            >Photo by
+            <a
+              href="https://unsplash.com/@vorosbenisop?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+              >Benjamin Voros</a
+            >
+            on
+            <a
+              href="https://unsplash.com/s/photos/sleep?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+              >Unsplash</a
+            ></span
+          >
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Page done by <span class="hl"><a href="">CodeLexx</a></span>
       </p>
-      <p class="desc-content">
-        Are you wondering when do you have to sleep and when you'll wake up,
-        accomplishing the sleep cycles?
-      </p>
-      <p class="desc-content">Ask no more!</p>
-    </section>
-    <section class="conf">
-      <p>Choose the hour in wich you want to wake up</p>
-      <div class="inputs">
-        <input type="time" name="time" />
-        <input type="button" value="Press me" name="btn" />
-      </div>
-    </section>
-    <section class="show">
-      <div class="hour-container hour1">
-        <p></p>
-        <p>
-          If you go to sleep at this hour,<br />You'll
-          <span class="hl">6 hour</span>
-        </p>
-      </div>
-      <div class="hour-container hour2">
-        <p></p>
-        <p>
-          If you go to sleep at this hour,<br />You'll sleep
-          <span class="hl">7:30 hour</span>
-        </p>
-      </div>
-      <div class="hour-container hour3">
-        <p></p>
-        <p>
-          If you go to sleep at this hour,<br />You'll sleep
-          <span class="hl">9 hour</span>
-        </p>
-      </div>
-    </section>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
