@@ -1,0 +1,73 @@
+:root {
+  --principal-color: #181ee5;
+  --secondary-color: #c0c0c0;
+  --tertiary-color: #ff7f11;
+}
+body {
+  background-color: var(--tertiary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Oxygen", sans-serif;
+  padding: 1.5em 2em;
+}
+/* section {
+  margin: 1em 0;
+} */
+.desc {
+  /* padding: 1.5em 0 0; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.desc .title {
+  font-size: 2.5em;
+  padding-bottom: 0.5em;
+  color: var(--principal-color);
+  font-family: "Fjalla One", sans-serif;
+}
+.desc-content {
+  padding-top: 0.5em;
+  line-height: 1.2em;
+  text-align: justify;
+  font-size: 1.2em;
+}
+.conf {
+  display: flex;
+  flex-direction: column;
+}
+.conf p {
+  font-size: 1.2em;
+  padding: 1em 0;
+}
+.inputs {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.hour-container p:last-child {
+  visibility: hidden;
+}
+.show {
+  display: flex;
+  flex-direction: column;
+}
+.hour-container {
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.hour-container p:first-of-type {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 2.5em;
+  color: var(--principal-color);
+}
+.hour-container p:last-of-type {
+  font-size: 1.2em;
+}
+.hl {
+  border-bottom: 1px solid var(--secondary-color);
+}

@@ -1,27 +1,17 @@
 const d=document,
-  $time=d.querySelector(".conf").children.time,
-  $btn=d.querySelector(".conf").children.btn,
+  $time=d.querySelector(".conf").children[1].children.time,
+  $btn=d.querySelector(".conf").children[1].children.btn,
   $hourContainer=d.querySelectorAll(".hour-container");
+  console.log($time)
 
 d.addEventListener("click",e=>{
   if (e.target===$btn) {
     console.log("hi")
     if (!$time.value) console.log("no value entered");
-    else{
-      // $hourContainer[0].children[0].textContent=hourSum($time.value,6);
-      // $hourContainer[1].children[0].textContent=hourSum($time.value,7,30);
-      // $hourContainer[2].children[0].textContent=hourSum($time.value,9);
-      givingValues($hourContainer)
-    }
+    else givingValues($hourContainer);
   }
 })
-// d.addEventListener("change",e=>{
-//   if(e.target===$time) {
-//     console.log(hourSum($time.value,6))
-//     console.log(hourSum($time.value,7,30))
-//     console.log(hourSum($time.value,9))
-//   }
-// })
+
 function hourSum(time,hour,min=0){
   let [h,m]=time.split(":");
   
@@ -33,12 +23,13 @@ function hourSum(time,hour,min=0){
     if(h<0) h='23';
   }
   
-  return [h,":",m.padStart(2,"0")].join("");
+  return [h.padStart(2,"0"),":",m.padStart(2,"0")].join("");
 }
 
 function givingValues(container){
-  let preTimers=[{h:6},{h:7,m:30},{h:9}];
+  let timers=[{h:6},{h:7,m:30},{h:9}];
   for (let i=0; i<container.length; i++){
-    container[i].children[0].textContent=hourSum($time.value,preTimers[i].h,preTimers[i].m)
+    container[i].children[0].textContent=hourSum($time.value,timers[i].h,timers[i].m);
+    container[i].children[1].style.visibility="visible";
   }
 }
