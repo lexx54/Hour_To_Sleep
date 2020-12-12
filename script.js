@@ -1,14 +1,13 @@
 const d=document,
   $time=d.querySelector(".conf").children[1].children.time,
   $btn=d.querySelector(".conf").children[1].children.btn,
-  $hourContainer=d.querySelectorAll(".hour-container");
-  console.log($time)
+  $show=d.querySelector(".show");
 
 d.addEventListener("click",e=>{
   if (e.target===$btn) {
     console.log("hi")
     if (!$time.value) console.log("no value entered");
-    else givingValues($hourContainer);
+    else givingValues();
   }
 })
 
@@ -26,10 +25,39 @@ function hourSum(time,hour,min=0){
   return [h.padStart(2,"0"),":",m.padStart(2,"0")].join("");
 }
 
-function givingValues(container){
+function givingValues(){
   let timers=[{h:6},{h:7,m:30},{h:9}];
-  for (let i=0; i<container.length; i++){
-    container[i].children[0].textContent=hourSum($time.value,timers[i].h,timers[i].m);
-    container[i].children[1].style.visibility="visible";
+  
+  reset($show);
+
+  const $hContainer=d.querySelectorAll(".hour-container");
+
+  for (let i=0; i<$hContainer.length; i++){
+    $hContainer[i].children[0].textContent=hourSum($time.value,timers[i].h,timers[i].m);
+    $hContainer[i].children[1].style.visibility="visible";
   }
+}
+function reset(element){
+  element.innerHTML='';
+  element.innerHTML=`<div class="hour-container hour1">
+  <p></p>
+  <p>
+    If you go to sleep at this hour,<br />You'll
+    <span class="hl">6 hour</span>
+  </p>
+</div>
+<div class="hour-container hour2">
+  <p></p>
+  <p>
+    If you go to sleep at this hour,<br />You'll sleep
+    <span class="hl">7:30 hour</span>
+  </p>
+</div>
+<div class="hour-container hour3">
+  <p></p>
+  <p>
+    If you go to sleep at this hour,<br />You'll sleep
+    <span class="hl">9 hour</span>
+  </p>
+</div>`;
 }

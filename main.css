@@ -74,6 +74,18 @@ body {
   color: var(--principal-color);
   font-weight: bold;
 }
+.show-img {
+  width: 70%;
+  border-radius: 0 20% 0 20%;
+  padding: 1em 0;
+  height: 50%;
+  margin: 0 auto;
+}
+.credits {
+  font-size: 0.8em;
+  text-align: center;
+  font-style: italic;
+}
 footer {
   margin-top: 2em;
 }
