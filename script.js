@@ -42,7 +42,7 @@ function reset(element){
   element.innerHTML=`<div class="hour-container hour1">
   <p></p>
   <p>
-    If you go to sleep at this hour,<br />You'll
+    If you go to sleep at this hour,<br />You'll sleep
     <span class="hl">6 hour</span>
   </p>
 </div>
